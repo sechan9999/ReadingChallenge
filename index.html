@@ -1,63 +1,113 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daily Todo Manager</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Vibe Coding Challenges</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #2d2d44);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      background: linear-gradient(to right, #ff00cc, #333399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #a0a0b0;
+      margin-bottom: 50px;
+    }
+
+    .grid {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      width: 250px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: white;
+      backdrop-filter: blur(10px);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .card span {
+      font-size: 3rem;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 5px 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      font-size: 0.8rem;
+      margin-top: 15px;
+    }
+  </style>
 </head>
+
 <body>
+
   <div class="container">
-    <!-- 헤더 -->
-    <header class="header">
-      <h1>📋 Daily Todo Manager</h1>
-    </header>
+    <h1>Vibe Coding Works</h1>
+    <p>Collection of interactive web applications built with AI</p>
 
-    <!-- 입력 영역 -->
-    <section class="input-section">
-      <input 
-        type="text" 
-        id="todo-input" 
-        placeholder="할 일을 입력하세요..."
-        maxlength="100"
-      >
-      <select id="category-select">
-        <option value="work">💼 업무</option>
-        <option value="personal">🏠 개인</option>
-        <option value="study">📚 공부</option>
-      </select>
-      <button id="add-btn" aria-label="할 일 추가">+ 추가</button>
-    </section>
+    <div class="grid">
+      <a href="web_version/index.html" class="card">
+        <span>🔢</span>
+        <h2>Digit Recognizer</h2>
+        <div class="badge">TensorFlow.js</div>
+      </a>
 
-    <!-- 필터 버튼 -->
-    <section class="filter-section">
-      <button class="filter-btn active" data-filter="all">전체</button>
-      <button class="filter-btn" data-filter="work">💼 업무</button>
-      <button class="filter-btn" data-filter="personal">🏠 개인</button>
-      <button class="filter-btn" data-filter="study">📚 공부</button>
-    </section>
-
-    <!-- 진행률 -->
-    <section class="progress-section">
-      <div class="progress-bar">
-        <div class="progress-fill" id="progress-fill"></div>
-      </div>
-      <p class="progress-text" id="progress-text">할 일을 추가하세요</p>
-    </section>
-
-    <!-- 할 일 목록 -->
-    <ul class="todo-list" id="todo-list">
-      <!-- 동적으로 생성됨 -->
-    </ul>
-
-    <!-- 하단 버튼 -->
-    <footer class="footer">
-      <button id="clear-completed-btn" aria-label="완료된 항목 모두 삭제">
-        🗑️ 완료된 항목 모두 삭제
-      </button>
-    </footer>
+      <a href="ToDo_App/index.html" class="card">
+        <span>📋</span>
+        <h2>Daily Todo</h2>
+        <div class="badge">Modern Apps</div>
+      </a>
+    </div>
   </div>
 
-  <script src="app.js"></script>
 </body>
+
 </html>
