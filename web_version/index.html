@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Digit Recognizer</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Icon library if needed, but using text for simplicity/speed -->
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Header -->
+        <header class="header">
+            <h1>Digit Recognizer</h1>
+            <p>Draw a digit (0-9) to test the AI model</p>
+        </header>
+
+        <!-- Left: Drawing Canvas -->
+        <section class="drawing-section">
+            <div class="status-card" id="status" style="margin-bottom: 20px;">
+                Initializing...
+            </div>
+
+            <div class="canvas-wrapper">
+                <canvas id="canvas" width="280" height="280"></canvas>
+            </div>
+
+            <div class="controls">
+                <button id="clear-btn" class="btn btn-danger">
+                    Clear
+                </button>
+                <button id="predict-btn" class="btn btn-primary" disabled>
+                    Recognize
+                </button>
+                <button id="train-btn" class="btn btn-primary" style="background: var(--text-secondary);">
+                    Retrain Model
+                </button>
+            </div>
+        </section>
+
+        <!-- Right: Results & Stats -->
+        <section class="info-section">
+            <!-- Main Prediction -->
+            <div class="result-display">
+                <h2>Prediction</h2>
+                <div id="prediction-text">-</div>
+            </div>
+
+            <!-- Confidence Chart -->
+            <div class="chart-container">
+                <div class="chart-title">Confidence Distribution</div>
+                <!-- Bars generated statically for simplicity -->
+                <script>
+                    // Small inline script to generate 10 bars
+                    for (let i = 0; i < 10; i++) {
+                        document.write(`
+                            <div class="bar-wrapper">
+                                <div class="digit-label">${i}</div>
+                                <div class="bar-bg">
+                                    <div class="bar-fill" id="bar-fill-${i}"></div>
+                                </div>
+                                <div class="prob-label" id="prob-label-${i}">0%</div>
+                            </div>
+                        `);
+                    }
+                </script>
+            </div>
+
+            <!-- History -->
+            <div class="history-section">
+                <div class="history-title">Recent Predictions</div>
+                <div class="history-list" id="history-list">
+                    <!-- History items will be added here -->
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
