@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Todo Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 헤더 -->
+    <header class="header">
+      <h1>📋 Daily Todo Manager</h1>
+    </header>
+
+    <!-- 입력 영역 -->
+    <section class="input-section">
+      <input 
+        type="text" 
+        id="todo-input" 
+        placeholder="할 일을 입력하세요..."
+        maxlength="100"
+      >
+      <select id="category-select">
+        <option value="work">💼 업무</option>
+        <option value="personal">🏠 개인</option>
+        <option value="study">📚 공부</option>
+      </select>
+      <button id="add-btn" aria-label="할 일 추가">+ 추가</button>
+    </section>
+
+    <!-- 필터 버튼 -->
+    <section class="filter-section">
+      <button class="filter-btn active" data-filter="all">전체</button>
+      <button class="filter-btn" data-filter="work">💼 업무</button>
+      <button class="filter-btn" data-filter="personal">🏠 개인</button>
+      <button class="filter-btn" data-filter="study">📚 공부</button>
+    </section>
+
+    <!-- 진행률 -->
+    <section class="progress-section">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <p class="progress-text" id="progress-text">할 일을 추가하세요</p>
+    </section>
+
+    <!-- 할 일 목록 -->
+    <ul class="todo-list" id="todo-list">
+      <!-- 동적으로 생성됨 -->
+    </ul>
+
+    <!-- 하단 버튼 -->
+    <footer class="footer">
+      <button id="clear-completed-btn" aria-label="완료된 항목 모두 삭제">
+        🗑️ 완료된 항목 모두 삭제
+      </button>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
